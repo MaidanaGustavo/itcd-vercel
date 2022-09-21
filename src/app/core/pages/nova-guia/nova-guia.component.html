@@ -1,0 +1,232 @@
+<div class="containter-fluid content-box">
+  <div class="portlet light" id="form_wizard_1" style="min-height: 100%">
+    <div class="portlet-title">
+      <div class="caption">
+        <i class=" icon-layers font-blue"></i>
+        <span class="caption-subject font-blue bold uppercase">
+          Nova Guia
+        </span>
+      </div>
+    </div>
+
+    <div class="portlet-body form">
+      <form class="form-horizontal" action="#" id="submit_form" #form method="POST" novalidate="novalidate">
+        <div class="form-wizard">
+          <div class="form-body">
+            <ul class="nav nav-pills nav-justified steps">
+              <li [ngClass]="{'active': (tab1), 'done': (!tab1)}" style="pointer-events: none">
+                <a href="#tab1" data-toggle="tab" class="step" aria-expanded={tab1}>
+                  <span class="number"> 1 </span>
+                  <span class="desc">
+                    <i class="fa fa-check"></i> Donatário
+                  </span>
+                </a>
+              </li>
+              <li
+                  [ngClass]="{'active': (tab2), 'done': (!tab2) && (tabSelecionada > 2)}" style="pointer-events: none;">
+                <a href="#tab2" data-toggle="tab" class="step" aria-expanded={tab2}>
+                  <span class="number"> 2 </span>
+                  <span class="desc">
+                    <i class="fa fa-check"></i> Doador
+                  </span>
+                </a>
+              </li>
+              <li
+                  [ngClass]="{'active': (tab3), 'done': (!tab3) && (tabSelecionada > 3)}" style="pointer-events: none">
+                <a href="#tab3" data-toggle="tab" class="step active">
+                  <span class="number"> 3 </span>
+                  <span class="desc">
+                    <i class="fa fa-check"></i> Advogado
+                  </span>
+                </a>
+              </li>
+              <li [ngClass]="{'active': (tab4), 'done': (!tab4) && (tabSelecionada > 3)}" style="pointer-events: none">
+                <a href="#tab4" data-toggle="tab" class="step">
+                  <span class="number"> 4 </span>
+                  <span class="desc">
+                    <i class="fa fa-check"></i> Bens
+                  </span>
+                </a>
+              </li>
+
+              <li
+              [ngClass]="{'active': (tab5), 'done': (!tab3) && (tabSelecionada > 3)}" style="pointer-events: none">
+              <a href="#tab3" data-toggle="tab" class="step active">
+              <span class="number"> 5 </span>
+              <span class="desc">
+                <i class="fa fa-check"></i> Arquivos
+              </span>
+             </a>
+            </li>
+
+            <li
+              [ngClass]="{'active': (tab6), 'done': (!tab3) && (tabSelecionada > 3)}" style="pointer-events: none">
+              <a href="#tab3" data-toggle="tab" class="step active">
+              <span class="number"> 6 </span>
+              <span class="desc">
+                <i class="fa fa-check"></i> Observação
+              </span>
+             </a>
+            </li>
+
+            <li
+              [ngClass]="{'active': (tab7), 'done': (!tab3) && (tabSelecionada > 3)}" style="pointer-events: none">
+              <a href="#tab3" data-toggle="tab" class="step active">
+              <span class="number"> 7 </span>
+              <span class="desc">
+                <i class="fa fa-check"></i> Conferência
+              </span>
+             </a>
+            </li>
+
+
+            <li
+              [ngClass]="{'active': (tab8), 'done': (!tab3) && (tabSelecionada > 3)}" style="pointer-events: none">
+              <a href="#tab3" data-toggle="tab" class="step active">
+              <span class="number"> 8 </span>
+              <span class="desc">
+                <i class="fa fa-check"></i> Fim
+              </span>
+             </a>
+            </li>
+
+
+            </ul>
+            <div id="bar" class="progress progress-striped progress-xxs" style="margin:0" role="progressbar">
+              <div class="progress-bar bar progress-bar-success" [ngStyle]="{'width': (progress)}"></div>
+            </div>
+
+            <div class="tab-content">
+
+              <div class="tab-pane active" id="tab1">
+
+                <h3 class="block">Dados do Donatário</h3>
+
+                <div class="form-group">
+
+                  <label class="control-label col-md-2">Nome
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" name="nome" />
+                    <span class="help-block"> Digite nome </span>
+                </div>
+
+
+                    <label class="control-label col-md-2">CPF
+                        <span class="required"> * </span>
+                    </label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="cpf" />
+                        <span class="help-block"> Digite o CPF </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                  <label class="control-label col-md-2">Email
+                      <span class="required"> * </span>
+                  </label>
+                  <div class="col-md-4">
+                      <input type="text" class="form-control" name="email" />
+                      <span class="help-block"> Digite o email </span>
+                  </div>
+
+                  <label class="control-label col-md-2">Telefone
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" name="telefone" />
+                    <span class="help-block"> Digite o telefone </span>
+                </div>
+
+              </div>
+
+              <div class="form-group">
+
+                <label class="control-label col-md-2">Endereço
+                  <span class="required"> * </span>
+              </label>
+              <div class="col-md-10">
+                  <input type="text" class="form-control" name="endereco" />
+                  <span class="help-block"> Digite o endereço </span>
+              </div>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label class="control-label col-md-2">Bairro
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" name="bairro" />
+                    <span class="help-block"> Digite o bairro </span>
+                </div>
+
+                <label class="control-label col-md-2">CEP
+                  <span class="required"> * </span>
+              </label>
+              <div class="col-md-4">
+                  <input type="text" class="form-control" name="cep" />
+                  <span class="help-block"> Digite o cep </span>
+              </div>
+
+            </div>
+
+            <div class="form-group">
+
+              <label class="control-label col-md-2">Complemento
+              </label>
+
+              <div class="col-md-4">
+                  <input type="text" class="form-control" name="bairro" />
+                  <span class="help-block"> Digite o complemento </span>
+              </div>
+
+              <label class="control-label col-md-2">UF
+                <span class="required"> * </span>
+            </label>
+            <div class="col-md-4">
+                  <select  class="form-control" name="cep">
+                    <option value="MS">MS</option>
+                  </select>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+
+            <label class="control-label col-md-2">Municipio
+              <span class="required"> * </span>
+          </label>
+          <div class="col-md-4">
+                <select  class="form-control" name="muniicipio">
+                  <option *ngFor="let muni of municipios" [value]="muni">{{muni.nome}}</option>
+                </select>
+          </div>
+
+        </div>
+
+            </div>
+
+
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-8">
+
+    </div>
+    <button type="button" class="btn btn-success col-md-1" style="margin-right: 3px;">Voltar</button>
+    <button type="button" class="btn btn-success col-md-1" style="margin-right: 3px;" >Salvar</button>
+    <button type="button" class="btn btn-success col-md-1">Salvar Rascunho</button>
+
+  </div>
+</div>

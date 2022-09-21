@@ -1,0 +1,249 @@
+<div class="row">
+  <div class="col-md-12">
+    <router-outlet></router-outlet>
+
+    <div>
+      <div class="portlet light bordered">
+        <div class="portlet-title">
+          <div class="caption">
+            <span class="caption-subject font-blue-sharp bold uppercase">
+              Consultar guias
+            </span>
+          </div>
+        </div>
+        <div class="portlet-body">
+          <div class="row" style="padding: 0 2rem">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Filtros</label>
+                <select class="form-control">
+                  <option selected></option>
+                  <option>Finalizada (80)</option>
+                  <option>Em Análise (50)</option>
+                  <option>Em Preenchimento (65)</option>
+                  <option>Isenta (15)</option>
+                  <option>Pendente (30)</option>
+                  <option>Cancelada (20)</option>
+                  <option>Enviada (100)</option>
+                  <option>Reenviada (20)</option>
+                </select>
+              </div>
+              <div class="form-group">Agrupadas por situação</div>
+              <ul class="list-group">
+                <li
+                  class="list-group-item"
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  Finalizada
+                  <div
+                    style="
+                      height: 10px;
+                      width: 10px;
+                      background-color: green;
+                      border-radius: 10px;
+                    "
+                  ></div>
+                </li>
+                <li
+                  class="list-group-item"
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  Em análise
+                  <div
+                    style="
+                      height: 10px;
+                      width: 10px;
+                      background-color: rgb(255, 230, 0);
+                      border-radius: 10px;
+                    "
+                  ></div>
+                </li>
+                <li
+                  class="list-group-item"
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  Em preenchimento
+                  <div
+                    style="
+                      height: 10px;
+                      width: 10px;
+                      background-color: blue;
+                      border-radius: 10px;
+                    "
+                  ></div>
+                </li>
+                <li
+                  class="list-group-item"
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  Isenta (15)
+                  <div
+                    style="
+                      height: 10px;
+                      width: 10px;
+                      background-color: gray;
+                      border-radius: 10px;
+                    "
+                  ></div>
+                </li>
+                <li
+                  class="list-group-item"
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  Pendente (30)
+                  <div
+                    style="
+                      height: 10px;
+                      width: 10px;
+                      background-color: red;
+                      border-radius: 10px;
+                    "
+                  ></div>
+                </li>
+                <li
+                  class="list-group-item"
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  Cancelada (20)
+                  <div
+                    style="
+                      height: 10px;
+                      width: 10px;
+                      background-color: darkcyan;
+                      border-radius: 10px;
+                    "
+                  ></div>
+                </li>
+                <li
+                  class="list-group-item"
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  Enviada (100)
+                  <div
+                    style="
+                      height: 10px;
+                      width: 10px;
+                      background-color: aquamarine;
+                      border-radius: 10px;
+                    "
+                  ></div>
+                </li>
+                <li
+                  class="list-group-item"
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  Reenviada (100)
+                  <div
+                    style="
+                      height: 10px;
+                      width: 10px;
+                      background-color: orange;
+                      border-radius: 10px;
+                    "
+                  ></div>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-8">
+              <table class="table table-striped table-hover table-bordered">
+                <thead>
+                  <tr>
+                    <th>N. Guia</th>
+                    <th>Dt. Mov.</th>
+                    <th>Nat. Tip. Op.</th>
+                    <th>Qtde Dias</th>
+                    <th>Situação</th>
+                    <th>Recl. Ab.</th>
+                    <th>Prioridade</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let guia of guias | paginate: config">
+                    <td>{{ guia.nGuia }}</td>
+                    <td>{{ guia.dtMov }}</td>
+                    <td>{{ guia.natTipOp }}</td>
+                    <td>{{ guia.qtdeDias }}</td>
+                    <td>{{ guia.situacao }}</td>
+                    <td>{{ guia.reclAb | ajustaBoolean }}</td>
+                    <td>{{ guia.prioridade | ajustaBoolean }}</td>
+                    <td>
+                      <button type="button" class="btn btn-default">
+                        Analisar
+                      </button>
+                      <button type="button" routerLink="/view-guia/1" class="btn btn-default">
+                        Visualizar
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <pagination-controls
+                [id]="config.id"
+                [maxSize]="maxSize"
+                [directionLinks]="directionLinks"
+                [autoHide]="autoHide"
+                [responsive]="responsive"
+                [previousLabel]="labels.previousLabel"
+                [nextLabel]="labels.nextLabel"
+                [screenReaderPaginationLabel]="
+                  labels.screenReaderPaginationLabel
+                "
+                [screenReaderPageLabel]="labels.screenReaderPageLabel"
+                [screenReaderCurrentLabel]="labels.screenReaderCurrentLabel"
+                (pageChange)="onPageChange($event)"
+                (pageBoundsCorrection)="onPageBoundsCorrection($event)"
+              >
+              </pagination-controls>
+              <div
+                style="gap: 1rem; display: flex; flex-direction: row-reverse"
+              >
+                <button type="button" class="btn btn-primary">
+                  Consulta IAGRO
+                </button>
+                <button type="button" class="btn btn-warning">
+                  Consulta IPVA
+                </button>
+                <button type="button" class="btn green-meadow">
+                  Imprimir Guia
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

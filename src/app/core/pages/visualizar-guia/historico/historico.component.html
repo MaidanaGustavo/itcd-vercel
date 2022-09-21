@@ -1,0 +1,50 @@
+<div class="container-column" >
+  <div class="row">
+    <div class="col-md-12">
+      <div class="portlet light portlet-fit bordered" style="width: 950px;">
+        <div class="portlet-title">
+          <div class="caption">
+              <i class="icon-microphone font-green"></i>
+              <span class="caption-subject bold font-green uppercase"> Histórico </span>
+          </div>
+          <div class="actions">
+              <div class="input-icon pull-right">
+                  <i class="icon-magnifier"></i>
+                  <input type="text" class="form-control input-circle" placeholder="Filtrar...." name="filter"
+                         [(ngModel)]="filter">
+              </div>
+                <hr>
+
+          </div>
+
+        </div>
+
+        <div class="portlet-body">
+          <div class="timeline" *ngIf="historicos">
+              <div *ngFor="let historico of historicos | filter:filter" class="timeline-item">
+                  <div class="timeline-badge">
+                      <i class="fa-solid fa-pen-to-square"></i>
+                      <div class="timeline-icon">
+                          <i class="fa fa-file-text-o font-blue"></i>
+                      </div>
+                  </div>
+                  <div class="timeline-body">
+                      <div class="timeline-body-arrow"></div>
+                      <div class="timeline-body-head">
+                          <div class="timeline-body-head-caption">
+                              <a class="timeline-body-title font-blue-madison">{{historico.usuario}}</a>
+                              <span class="timeline-body-time font-grey-cascade">{{historico.data | date: 'dd/MM/yyyy hh:mm:ss'}}</span>
+                          </div>
+
+                      </div>
+                      <div class="timeline-body-content">
+                          <span class="font-grey-cascade">{{historico.descricao}}</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

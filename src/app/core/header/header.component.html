@@ -1,0 +1,52 @@
+<div class="page-header navbar navbar-fixed-top" *ngIf="usuarioLogado && usuarioLogado.user">
+    <div class="page-header-inner ">
+        <div class="page-logo">
+            <div class="menu-toggler sidebar-toggler"></div>
+            <a style="color: rgb(228, 228, 228); text-decoration:none;" [routerLink]="'/'">
+                <h3 class="logo-defalt"><b>Imposto sobre a Transmissão Causa Mortis e Doação de Quaisquer Bens ou Direitos</b> - I.T.C.D</h3>
+                <h3 class="logo-reduzida"><b>I.T.C.D</b></h3>
+            </a>
+        </div>
+        <span class="active"></span>
+
+        <!-- MENU TOGGLER -->
+        <a class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"></a>
+
+        <!-- PAGE TOP -->
+        <div class="page-top">
+            <div class="top-menu">
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown dropdown-user dropdown-dark">
+                        <ul class="dropdown-menu dropdown-menu-default">
+                            <li>
+                                <a [routerLink]="'/'">
+                                    <i class="fa fa-home"></i> Menu Principal
+                                </a>
+                            </li>
+                            <li>
+                                <a [routerLink]="'help'">
+                                    <i class="icon-support"></i> Ajuda
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://efazenda.servicos.ms.gov.br/e-fazenda/login.aspx">
+                                    <i class="icon-key"></i> Sair
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                           data-close-others="true" style="height: 74px">
+                            <i class="fa fa-user-o"></i>
+                            <span class="username username-hide-on-mobile"> {{usuarioLogado?.user?.userName}}</span>
+                        </a>
+                    </li>
+                    <li class="dropdown dropdown-extended quick-sidebar-toggler" (click)="toggleCollapsed()">
+                        <span class="sr-only">Toggle Quick Sidebar</span>
+                        <i class="icon-logout"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- END PAGE TOP -->
+    </div>
+</div>

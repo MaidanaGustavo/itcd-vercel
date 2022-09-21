@@ -1,0 +1,143 @@
+<div class="page-sidebar-wrapper">
+  <div class="page-sidebar navbar-collapse collapse">
+    <ul
+      class="page-sidebar-menu"
+      data-keep-expanded="false"
+      data-auto-scroll="true"
+      data-slide-speed="200"
+    >
+      <li class="heading">
+        <h3 class="uppercase">Opções</h3>
+      </li>
+      <li class="nav-item {{ itemMenuSelected == 1 ? 'active' : '' }}">
+        <a routerLink="/" class="nav-link" (click)="changeMenuSelected(1)">
+          <i class="fa fa-home"></i>
+          <span class="title">Início</span>
+        </a>
+      </li>
+      <li
+        class="nav-item {{ itemMenuSelected == 2 ? 'active' : '' }}"
+        (click)="changeMenuSelected(2)"
+      >
+        <a routerLink="/pages/guias" class="nav-link">
+          <i class="fa fa-list-alt"></i>
+          <span class="title">Guias</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/pages/relatorios"
+          class="nav-link"
+          (click)="changeMenuSelected(3)"
+        >
+          <i class="fa fa-area-chart"></i>
+          <span class="title">Relatórios</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/pages/atendimento-guia"
+          class="nav-link"
+          (click)="changeMenuSelected(4)"
+        >
+          <i class="fa fa-list-alt"></i>
+          <span class="title">Atendimento Guia</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/pages/reclamacoes"
+          class="nav-link"
+          (click)="changeMenuSelected(5)"
+        >
+          <i class="fa fa-warning"></i>
+          <span class="title">Reclamações</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/pages/daems"
+          class="nav-link"
+          (click)="changeMenuSelected(6)"
+        >
+          <i class="icon-grid"></i>
+          <span class="title">DAEMS</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="../tabelas/tabelas-simples.html" class="nav-link">
+          <i class="fa fa-sign-out"></i>
+          <span class="title">Sair</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="page-content-wrapper">
+  <div class="page-content" style="padding-top: 0">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<!--
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="page-sidebar-wrapper col-md-2">
+      <div class="page-sidebar navbar-collapse collapse">
+          <ul class="page-sidebar-menu  " data-keep-expanded="false" data-auto-scroll="true"
+              data-slide-speed="200">
+              <span class="bold" style="font-size: 11pt; margin-left:15px;">Opções</span>
+              <li class="nav-item start {{itemMenuSelected==1?'active':''}}">
+                <a href="javascript:;" class="nav-link nav-toggle" (click)="changeMenuSelected(1)" [routerLink]="[ '/']">
+                  <i class="glyphicon glyphicon-home"></i>
+                  <span class="title">Inicio</span>
+                  <span class="arrow"></span>
+              </a>
+              </li>
+
+              <li class="nav-item {{itemMenuSelected==2?'active':''}}">
+                  <a href="javascript:;" class="nav-link nav-toggle" (click)="changeMenuSelected(2)" routerLink="/pages/guias" >
+                      <i class="icon-settings"></i>
+                      <span class="title">Guias</span>
+                      <span class="arrow"></span>
+                  </a>
+              </li>
+
+              <li class="nav-item  {{itemMenuSelected==3?'active':''}}">
+                <a href="javascript:;" class="nav-link nav-toggle" (click)="changeMenuSelected(3)">
+                    <i class="icon-settings"></i>
+                    <span class="title">DAEMS</span>
+                    <span class="arrow"></span>
+                </a>
+            </li>
+
+            <li class="nav-item  ">
+              <a href="javascript:;" class="nav-link nav-toggle">
+                  <i class="icon-settings"></i>
+                  <span class="title">Sair</span>
+                  <span class="arrow open"></span>
+              </a>
+          </li>
+
+          </ul>
+      </div>
+    </div>
+
+    <div class="container-fluid col-md-10" >
+      <ng-container *ngFor="let msg of mensagens">
+        <div  class="alert alert-{{msg.tipo}} row" role="alert">
+          <span class="h5 col-md-10">{{msg.descricao}}</span>
+          <button type="button" class="btn btn-success col-md-2" (click)="marcarComoLida(msg)">Lida</button>
+        </div>
+      </ng-container>
+
+
+      <router-outlet></router-outlet>
+    </div>
+
+
+  </div>
+</div>
+
+ -->

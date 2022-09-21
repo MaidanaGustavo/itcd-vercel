@@ -1,0 +1,59 @@
+<div class="container-column">
+  <span></span>
+  <div class="box-view">
+  <div class="portlet-title">
+    <div class="caption">
+      <i class="fa fa-code-fork"></i>
+      <span class="caption-subject bold" style="font-size: 16px;"> Status Atual da Guia </span>
+  </div>
+  </div>
+
+  <div class="portlet-body">
+
+    <div class="list-group-item m-heading-1 m-bordered">
+
+      <div class="caption">
+        <div class="caption-subject bold font-grey-galler">{{status.titulo}}</div>
+
+          <div class="row m-l-xxs">
+           <div class="col-md-12 m-t-xs">
+            <label class="col-md-5">Executor : </label>
+            <p class="col-md-6">{{status.executor}}</p>
+            </div>
+          </div>
+
+          <div class="row m-l-xxs">
+            <div class="col-md-12 m-t-xs">
+             <label class="col-md-5">Setor : </label>
+             <p class="col-md-6">{{status.setor.nome}}</p>
+             </div>
+           </div>
+
+
+           <div class="row m-l-xxs">
+            <div class="col-md-12 m-t-xs">
+             <label class="col-md-5">Prazo : </label>
+             <p class="col-md-6">{{status.prazo | date:'dd/MM/yyyy'}}</p>
+             </div>
+           </div>
+
+
+           <div class="row m-l-xxs">
+
+            <div class="col-md-6 m-t-xs">
+              <button type="button" class="btn btn-sm pull-left green m-r-xxs inline-block" > Inserir  <i class="fa fa-list"></i></button>
+            </div>
+
+            <div class="col-md-6 m-t-xs">
+              <button type="button" class="btn btn-sm pull-left green m-r-xxs inline-block" > Outras Opções  <i class="fa fa-list"></i></button>
+            </div>
+
+            </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>

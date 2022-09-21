@@ -1,0 +1,73 @@
+<div class="containter-fluid content-box">
+  <div class="container-fluid">
+    <div class="row">
+      <span class="h4"> Listagem de Guias </span>
+    </div>
+    <br />
+    <div class="row">
+      <select class="form-control" name="filtros" id="filtros">
+        <option value="1" selected>Filtros</option>
+      </select>
+    </div>
+    <br />
+    <div class="row">
+      <button type="button" class="btn btn-success col-md-1">Buscar</button>
+      <div class="col-md-10"></div>
+      <button type="button" class="btn btn-success col-md-1">
+        <a
+          routerLink="/pages/nova-guia"
+          style="text-decoration: none; color: #fff"
+          >Nova Guia</a
+        >
+      </button>
+    </div>
+    <br />
+  </div>
+
+  <table
+    class="table table-striped table-hover table-bordered"
+    id="sample_editable_1"
+  >
+    <thead>
+      <tr>
+        <th>CPF/CNPJ</th>
+        <th>Nome</th>
+        <th>Guia N.</th>
+        <th>Data Mov.</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let guia of elements">
+        <td>{{ guia.cpf }}</td>
+        <td>{{ guia.nome }}</td>
+        <td>{{ guia.numeroGuia }}</td>
+        <td>{{ guia.dataMov }}</td>
+        <td>{{ guia.status }}</td>
+        <td>
+          <button type="button" class="btn btn-default">Abrir</button>
+          <button type="button" class="btn btn-default">
+            Retificação/Cancelamento
+          </button>
+          <button type="button" class="btn btn-default">Reclamação</button>
+          <button
+            type="button"
+            *ngIf="guia.isGuiaComplementar"
+            class="btn btn-default"
+          >
+            Guia Complementar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-11"></div>
+      <button type="button" class="btn btn-success col-md-1">
+        Imprimir Guia
+      </button>
+    </div>
+  </div>
+</div>

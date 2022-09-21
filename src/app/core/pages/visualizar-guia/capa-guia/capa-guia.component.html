@@ -1,0 +1,70 @@
+<div class="container-flx">
+
+
+<div class="page-sidebar-wrapper">
+  <div class="page-sidebar navbar-collapse collapse">
+    <ul class="page-sidebar-menu" data-auto-scroll="true" data-slide-speed="200">
+      <li class="nav-item start" [ngClass]="{'active': (openMenuToogle), 'done': (!openMenuToogle)}">
+
+        <a class="nav-link nav-toggle" (click)="openMenuToogle = !openMenuToogle">
+          <i class="icon-organization"></i>
+          <span class="title"></span>
+          <span class="title"> GUIA {{guia.numero}}</span>
+          <span class="selected"></span>
+          <span class="arrow" [ngClass]="{'open': (openMenuToogle), 'done': (!openMenuToogle)}"></span>
+        </a>
+
+        <ul class="sub-menu">
+          <li class="nav-item" routerLinkActive='active' routerLink="/view-guia/1/" >
+            <a  class="nav-link ">
+                <i class="icon-bulb"></i>
+                <span class="title">Dados Gerais</span>
+            </a>
+          </li>
+
+          <li class="nav-item" routerLinkActive='active' *ngFor="let nav of navs">
+            <a  class="nav-link " routerLink={{nav.rota}}>
+                <i class={{nav.icon}}></i>
+                <span class="title">{{nav.nome}}</span>
+            </a>
+          </li>
+
+        </ul>
+
+        <li class="heading">
+          <h3 class="uppercase">Arquivos</h3>
+        </li>
+
+        <li style="padding: 5px 15px 5px 15px; height: 30px;">
+          <small>
+              <label class="control-label col-md-9">Exibir Contagem de Páginas: </label>
+              <span class="col-md-3">
+          <ui-switch size="small" [(ngModel)]="visaoPaginas" name="visaoPaginas"
+                   [checked]="visaoPaginas"></ui-switch>
+          </span>
+          </small>
+        </li>
+
+        <ul class="page-sidebar-menu pre-scrollable" data-auto-scroll="true" data-slide-speed="200">
+            <li class="nav-item start " [routerLinkActive]="['active','open']"
+              *ngFor="let doc of guia.documentos ;let i = index">
+                <a class="nav-link " [title]="doc.nome">
+                <i class="fa fa-folder-o"></i>
+                <small>Entregue em {{doc.dataEntregue | date : 'dd/MM/yyyy'}}</small>
+                </a>
+                <ul class="sub-menu" style="display:block;text-align: start;margin-left: 35px;">
+                  <li class="nav-item" *ngFor="let arq of doc.arquivos">
+                    <i class="icon-paper-clip"></i>
+                    <small>{{arq.nome}}</small>
+                  </li>
+                </ul>
+            </li>
+
+         </ul>
+    </ul>
+  </div>
+</div>
+<router-outlet></router-outlet>
+
+</div>
+

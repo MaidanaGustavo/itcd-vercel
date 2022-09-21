@@ -1,0 +1,8 @@
+.container-flx{
+  display: flex;
+  width: 100%;
+  justify-content:flex-start;
+  height: 100%;
+  gap: 10px;
+  background: #f2f2f2;
+}

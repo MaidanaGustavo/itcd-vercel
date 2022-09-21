@@ -1,0 +1,75 @@
+<div class="page-sidebar-wrapper">
+  <!--Menu Principal-->
+
+  <div class="page-sidebar navbar-collapse collapse">
+    <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="false" data-slide-speed="200" *ngIf="usuarioSessao()">
+      <!-- Processo -->
+      <li class="nav-item start open" routerLinkActive='active'>
+        <a class="nav-link nav-toggle" [routerLink]="['processos',processo.numero]">
+          <i class="icon-organization"></i>
+          <span class="title"></span>
+          <span class="title">{{processo.numero | ie}}</span>
+          <span class="selected"></span>
+          <span class="arrow open"></span>
+        </a>
+        <ul class="sub-menu">
+          <li class="nav-item" routerLinkActive='active'>
+            <a [routerLink]="['processos',processo.numero]" class="nav-link ">
+              <i class="icon-bulb"></i>
+              <span class="title">Visão Geral</span>
+            </a>
+          </li>
+          <li class="nav-item" routerLinkActive='active'>
+            <a [routerLink]="['processos','historico',processo.numero]" class="nav-link nav-toggle">
+              <i class="fa fa-history"></i>
+              <span class="title">Histórico</span>
+            </a>
+          </li>
+        </ul>
+        <!-- DOCUMENTOS -->
+        <li class="heading">
+          <h3 class="uppercase">Eventos do Processo</h3>
+        </li>
+        <li class="nav-item start" [routerLinkActive]="['active','open']" *ngFor="let doc of documentos let i = index">
+          <a class="nav-link" [routerLink]="['/documentos/view', doc.classe,doc.id]">
+            <i class="fa fa-folder-o"></i>
+            <span class="title"><small>{{doc.titulo}}</small>
+            </span>
+            <span class="arrow"></span>
+          </a>
+          <ul class="sub-menu">
+            <li class="nav-item" *ngFor="let item of documento.anexos let j = index" routerLinkActive='active'>
+              <a class="nav-link" [title]="item.nomeOriginal" [routerLink]="['documentos','view','files', item.chave]" *ngIf="item.formato === 'application/pdf'">
+                <i class="icon-paper-clip"></i>
+                <small *ngIf="item.nomeOriginal.length > 18">{{item.nomeOriginal.substring(0,18)}}...</small>
+                <small *ngIf="item.nomeOriginal.length < 19">{{item.nomeOriginal}}</small>
+              </a>
+              <a class="nav-link" [title]="item.nomeOriginal" (click)="baixarArquivo(item.chave, item.nomeOriginal)" *ngIf="item.formato !== 'application/pdf'">
+                <i class="icon-paper-clip"></i>
+                <small *ngIf="item.nomeOriginal.length > 18">{{item.nomeOriginal.substring(0,18)}}...</small>
+                <small *ngIf="item.nomeOriginal.length < 19">{{item.nomeOriginal}}</small>
+              </a>
+            </li>
+          </ul>
+        </li>
+    </ul>
+
+    <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="false" data-slide-speed="200" *ngIf="usuarioSessao()">
+      <!-- HOME -->
+      <!--<div *ngIf="expression"></div>-->
+      <li class="nav-item start open" routerLinkActive='active'>
+        <!-- <li class="nav-item">
+          <a class="nav-link nav-toggle">
+            <i class="fa fa-bolt"></i>
+            <span class="title">Planos de Melhoria</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-toggle">
+            <i class="fa fa-code-fork"></i>
+            <span class="title">Tarefas Críticas</span>
+          </a>
+        </li> -->
+    </ul>
+  </div>
+</div>
