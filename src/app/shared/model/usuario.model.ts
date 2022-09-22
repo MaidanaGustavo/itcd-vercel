@@ -6,10 +6,10 @@ export class UsuarioLogado {
 }
 
 export class Usuario {
-  
+
   grupo: number;
   userName: string;
-  matricula: number;  
+  matricula: number;
   cargo: string;
   nome: string;
 
@@ -19,7 +19,8 @@ export class Usuario {
   email: string;
   cpf: string;
   situacao: string;
-  grupoSistema: EGrupoSistema;  
+  grupoSistema: EGrupoSistema;
   grupoSistemaSelecionado: EGrupoSistema;
   coordenadoriaTransito: boolean;
+  isFiscal : boolean;
 }

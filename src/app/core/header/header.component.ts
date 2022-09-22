@@ -35,5 +35,11 @@ export class HeaderComponent implements OnInit {
     processLoaded() {
         return true;
     }
-
+    changeTipoUser(){
+      const isFiscal = !this.usuarioLogado.user.isFiscal
+      const nome  = this.usuarioLogado.user.isFiscal? 'Contribuinte' : 'Fiscal'
+      this.usuarioLogado.user.isFiscal = isFiscal;
+      this.usuarioLogado.user.userName = nome;
+      this.auth.setUsuarioLogado(this.usuarioLogado);
+    }
 }

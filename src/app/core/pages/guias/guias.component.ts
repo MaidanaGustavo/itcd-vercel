@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioLogado } from 'src/app/shared/model/usuario.model';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
   selector: 'app-guias',
@@ -6,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./guias.component.css']
 })
 export class GuiasComponent implements OnInit {
+  usuarioLogado : UsuarioLogado;
+  constructor(private authService: AuthService) {
 
-  constructor() { }
+  }
    elements = [
     {
       cpf : '07812365447',
@@ -59,7 +63,10 @@ export class GuiasComponent implements OnInit {
     }
   ]
   ngOnInit() {
-
+    this.authService.usuarioSessao.subscribe(resp=>{
+       if(resp)
+       this.usuarioLogado = resp;
+    })
   }
 
 }

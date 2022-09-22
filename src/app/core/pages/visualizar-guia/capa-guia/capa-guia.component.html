@@ -6,7 +6,7 @@
     <ul class="page-sidebar-menu" data-auto-scroll="true" data-slide-speed="200">
       <li class="nav-item start" [ngClass]="{'active': (openMenuToogle), 'done': (!openMenuToogle)}">
 
-        <a class="nav-link nav-toggle" (click)="openMenuToogle = !openMenuToogle">
+        <a class="nav-link nav-toggle">
           <i class="icon-organization"></i>
           <span class="title"></span>
           <span class="title"> GUIA {{guia.numero}}</span>
@@ -15,7 +15,7 @@
         </a>
 
         <ul class="sub-menu">
-          <li class="nav-item" routerLinkActive='active' routerLink="/view-guia/1/" >
+          <li class="nav-item" routerLink="/view-guia/1/" >
             <a  class="nav-link ">
                 <i class="icon-bulb"></i>
                 <span class="title">Dados Gerais</span>
@@ -33,16 +33,6 @@
 
         <li class="heading">
           <h3 class="uppercase">Arquivos</h3>
-        </li>
-
-        <li style="padding: 5px 15px 5px 15px; height: 30px;">
-          <small>
-              <label class="control-label col-md-9">Exibir Contagem de Páginas: </label>
-              <span class="col-md-3">
-          <ui-switch size="small" [(ngModel)]="visaoPaginas" name="visaoPaginas"
-                   [checked]="visaoPaginas"></ui-switch>
-          </span>
-          </small>
         </li>
 
         <ul class="page-sidebar-menu pre-scrollable" data-auto-scroll="true" data-slide-speed="200">
@@ -65,6 +55,9 @@
   </div>
 </div>
 <router-outlet></router-outlet>
-
+<div class="container-column">
+  <app-status-guia></app-status-guia>
+  <app-chatbox></app-chatbox>
+</div>
 </div>
 

@@ -13,7 +13,7 @@ export class CapaGuiaComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) { }
   loading:boolean = true;
-  openMenuToogle :boolean =  false;
+  openMenuToogle :boolean =  true;
   guia :GuiaSessao = new GuiaSessao();
   public navs = navsCapa;
   visaoPaginas = false

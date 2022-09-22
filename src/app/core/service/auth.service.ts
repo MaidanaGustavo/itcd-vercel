@@ -71,10 +71,11 @@ export class AuthService {
       user.token = 'VVNSPWdtYWlkYW5hJklQPTIwMS44OC4yMjAuMjMzJk1BVD0mR1JVPTAmVU5JPTQwMSZTSVM9MCZNT0Q9LTEmTklWPTAwMDAwMDAwMDAwMCZEVEhSPTEyLzA5LzIwMjIgMjE6NTI6MzU=&DUA=MDkvMDkvMjAyMiAxNDoxOTowMA==';
     //
     user.user = new Usuario();
-    user.user.userName = 'gmaidana';
-
+    user.user.userName = 'Contribuinte';
+    user.user.isFiscal = false;
     this.txtObservable.next(txt);
     localStorage.setItem('Token', user.token);
+
     this.setUsuarioLogado(user);
 
     // this.autenticar(txt).subscribe((retorno) => {
@@ -93,7 +94,7 @@ export class AuthService {
       .pipe(catchError(Error.error));
   }
 
-  private setUsuarioLogado(usuario: UsuarioLogado) {
+  public setUsuarioLogado(usuario: UsuarioLogado) {
     this.usuarioObservable.next(usuario);
     this.usuarioSessao.subscribe((us) => {
       console.log(us)

@@ -1,4 +1,10 @@
-<div class="containter-fluid content-box">
+<div *ngIf="!usuarioLogado.user.isFiscal" >
+<div *ngFor="let msg of mensagens" class="alert alert-{{msg.tipo}}"  role="alert" style="display: flex;justify-content:space-between">
+  <span class="h5">{{msg.descricao}}</span>
+  <button type="button" (click)="marcarComoLida(msg)" class="btn btn-success">Lida</button>
+</div>
+</div>
+<div class="containter-fluid content-box" *ngIf="!usuarioLogado.user.isFiscal">
   <div class="row">
     <div class="tiles col-md-1" style="margin-right: 15px">
       <div
@@ -33,4 +39,18 @@
       </div>
     </div>
   </div>
+</div>
+
+
+
+<div class="containter-fluid content-box" *ngIf="usuarioLogado.user.isFiscal">
+  <div class="row">
+    <div class="caption">
+      <i class="fa fa-line-chart" aria-hidden="true"></i>
+      <span class="caption-subject font-blue-sharp bold uppercase">
+        Dashboard
+      </span>
+    </div>
+  </div>
+
 </div>

@@ -24,6 +24,11 @@
                                 </a>
                             </li>
                             <li>
+                              <a (click)="changeTipoUser()">
+                                  <i class="fa fa-user-secret"></i>  Trocar para {{usuarioLogado.user.isFiscal?'Contribuite':'Fiscal'}}
+                              </a>
+                          </li>
+                            <li>
                                 <a [routerLink]="'help'">
                                     <i class="icon-support"></i> Ajuda
                                 </a>

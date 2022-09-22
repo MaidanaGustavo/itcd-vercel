@@ -1,4 +1,4 @@
-<div class="containter-fluid content-box">
+<div class="containter-fluid content-box" *ngIf="!usuarioLogado.user.isFiscal">
   <div class="container-fluid">
     <div class="row">
       <span class="h4"> Listagem de Guias </span>
@@ -40,13 +40,13 @@
     </thead>
     <tbody>
       <tr *ngFor="let guia of elements">
-        <td>{{ guia.cpf }}</td>
+        <td>{{ guia.cpf}}</td>
         <td>{{ guia.nome }}</td>
         <td>{{ guia.numeroGuia }}</td>
         <td>{{ guia.dataMov }}</td>
         <td>{{ guia.status }}</td>
         <td>
-          <button type="button" class="btn btn-default">Abrir</button>
+          <button type="button" class="btn btn-default" routerLink="/view-guia/1">Abrir</button>
           <button type="button" class="btn btn-default">
             Retificação/Cancelamento
           </button>
@@ -71,3 +71,4 @@
     </div>
   </div>
 </div>
+<app-fiscal-guias *ngIf="usuarioLogado.user.isFiscal"></app-fiscal-guias>

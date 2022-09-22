@@ -19,6 +19,7 @@ import { ReclamacoesComponent } from "./reclamacoes/reclamacoes.component";
 import { RelatoriosComponent } from "./relatorios/relatorios.component";
 import { AtendimentoGuiaComponent } from "./atendimento-guia/atendimento-guia.component";
 import { DaemsComponent } from "./daems/daems.component";
+import { DashboardFiscalComponent } from './dashboard-fiscal/dashboard-fiscal.component';
 
 @NgModule({
   imports: [
@@ -43,6 +44,7 @@ import { DaemsComponent } from "./daems/daems.component";
     RelatoriosComponent,
     AtendimentoGuiaComponent,
     DaemsComponent,
+    DashboardFiscalComponent,
   ],
 })
 export class PagesModule {}

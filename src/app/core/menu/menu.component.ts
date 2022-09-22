@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { UsuarioLogado } from "../../shared/model/usuario.model";
 import { AuthService } from "../service/auth.service";
+import { Menu } from "./menu.models";
+import { opcoesContribuite, opcoesFiscal } from "./menu.util";
 
 @Component({
   selector: "itcd-menu",
@@ -14,30 +16,18 @@ export class MenuComponent implements OnInit {
   itemMenuSelected: number;
   itemMenuSelectedObsevable = new BehaviorSubject(1);
   public _itemMenuSelect = this.itemMenuSelectedObsevable.asObservable();
+  opcoes : Menu[] = [];
 
-  mensagens = [
-    {
-      id: 1,
-      descricao:
-        "A Análise da Guia  n.xxxx foi finalizada, o DAEMS referente a esta Guia já se encontra liberado para pagamento",
-      tipo: "info",
-    },
-    {
-      id: 2,
-      descricao:
-        "A Análise da Reclamação  n.xxxx foi finalizada, a resposta da análise já se encontra disponível",
-      tipo: "warning",
-    },
-  ];
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
+    console.log('Aqui')
     this._itemMenuSelect.subscribe((resp) => {
-      console.log(resp);
       this.itemMenuSelected = resp;
     });
     this.authService.usuarioSessao.subscribe((us) => {
       this.usuario = us;
+      this.opcoes = this.usuario.user.isFiscal?opcoesFiscal:opcoesContribuite;
       this.authService.profileSistema.subscribe((p) => {
         switch (p) {
           case "Development":
@@ -85,10 +75,6 @@ export class MenuComponent implements OnInit {
     }
   }
 
-  marcarComoLida(item: any) {
-    let msgs = this.mensagens.filter((element) => element.id !== item.id);
-    this.mensagens = msgs;
-  }
 
   changeMenuSelected(n: number) {
     console.log(n);

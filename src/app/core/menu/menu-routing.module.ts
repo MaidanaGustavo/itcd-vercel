@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { AuthGuard } from "../guards/auth.guard";
 import { AtendimentoGuiaComponent } from "../pages/atendimento-guia/atendimento-guia.component";
 import { DaemsComponent } from "../pages/daems/daems.component";
+import { DashboardFiscalComponent } from "../pages/dashboard-fiscal/dashboard-fiscal.component";
 import { DashboardComponent } from "../pages/dashboard/dashboard.component";
 import { FiscalGuiasComponent } from "../pages/fiscal-guias/fiscal-guias.component";
 import { GuiasComponent } from "../pages/guias/guias.component";
@@ -27,6 +28,7 @@ import { JuntadaSefazComponent } from "../pages/visualizar-guia/juntada-sefaz/ju
 import { JuntadaUfitcdComponent } from "../pages/visualizar-guia/juntada-ufitcd/juntada-ufitcd.component";
 import { ObservacaoAvaliadorComponent } from "../pages/visualizar-guia/observacao-avaliador/observacao-avaliador.component";
 import { ObservacoesComponent } from "../pages/visualizar-guia/observacoes/observacoes.component";
+import { ReclamacaoComponent } from "../pages/visualizar-guia/reclamacao/reclamacao.component";
 import { ResponsaveisComponent } from "../pages/visualizar-guia/responsaveis/responsaveis.component";
 import { ViuvaMeeiraComponent } from "../pages/visualizar-guia/viuva-meeira/viuva-meeira.component";
 import { MenuComponent } from "./menu.component";
@@ -38,7 +40,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: "", component: DashboardComponent },
-      { path: "guias", component: FiscalGuiasComponent },
+      { path: "guias", component: GuiasComponent },
       { path:'view-guia/:id',component:CapaGuiaComponent,children:[
         {path: '',component:DadosGeraisComponent,pathMatch: 'full'},
         {path: 'historico',component:HistoricoComponent},
@@ -50,7 +52,7 @@ const routes: Routes = [
         {path: 'defensor',component:DefensorPublicoComponent},
         {path: 'responsavel',component:ResponsaveisComponent},
         {path: 'donatario',component:DonatarioComponent},
-        {path: 'reclamacao',component:ReclamacoesComponent},
+        {path: 'reclamacao',component:ReclamacaoComponent},
         {path: 'doador',component:DoadorComponent},
         {path: 'bens',component:BensComponent},
         {path: 'responsaveis',component:ResponsaveisComponent},
@@ -75,6 +77,10 @@ const routes: Routes = [
         path: "reclamacoes",
         component: ReclamacoesComponent,
       },
+      {
+        path: "daems",
+        component: DaemsComponent,
+      }
     ],
   },
   // { path: 'guias', component: GuiasComponent, canActivate: [AuthGuard] }

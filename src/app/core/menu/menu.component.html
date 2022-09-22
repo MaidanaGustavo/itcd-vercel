@@ -9,61 +9,13 @@
       <li class="heading">
         <h3 class="uppercase">Opções</h3>
       </li>
-      <li class="nav-item {{ itemMenuSelected == 1 ? 'active' : '' }}">
-        <a routerLink="/" class="nav-link" (click)="changeMenuSelected(1)">
-          <i class="fa fa-home"></i>
-          <span class="title">Início</span>
+      <li  *ngFor="let opcao of opcoes" class="nav-item {{ itemMenuSelected == opcao.id ? 'active' : '' }}">
+        <a routerLink={{opcao.rota}} class="nav-link" (click)="changeMenuSelected(opcao.id)">
+          <i class={{opcao.icone}}></i>
+          <span class="title">{{opcao.titulo}}</span>
         </a>
       </li>
-      <li
-        class="nav-item {{ itemMenuSelected == 2 ? 'active' : '' }}"
-        (click)="changeMenuSelected(2)"
-      >
-        <a routerLink="/pages/guias" class="nav-link">
-          <i class="fa fa-list-alt"></i>
-          <span class="title">Guias</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a
-          routerLink="/pages/relatorios"
-          class="nav-link"
-          (click)="changeMenuSelected(3)"
-        >
-          <i class="fa fa-area-chart"></i>
-          <span class="title">Relatórios</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a
-          routerLink="/pages/atendimento-guia"
-          class="nav-link"
-          (click)="changeMenuSelected(4)"
-        >
-          <i class="fa fa-list-alt"></i>
-          <span class="title">Atendimento Guia</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a
-          routerLink="/pages/reclamacoes"
-          class="nav-link"
-          (click)="changeMenuSelected(5)"
-        >
-          <i class="fa fa-warning"></i>
-          <span class="title">Reclamações</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a
-          routerLink="/pages/daems"
-          class="nav-link"
-          (click)="changeMenuSelected(6)"
-        >
-          <i class="icon-grid"></i>
-          <span class="title">DAEMS</span>
-        </a>
-      </li>
+
       <li class="nav-item">
         <a href="../tabelas/tabelas-simples.html" class="nav-link">
           <i class="fa fa-sign-out"></i>
