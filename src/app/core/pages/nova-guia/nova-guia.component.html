@@ -1,4 +1,5 @@
 <div class="containter-fluid content-box">
+
   <div class="portlet light" id="form_wizard_1" style="min-height: 100%">
     <div class="portlet-title">
       <div class="caption">
@@ -98,13 +99,15 @@
 
             <div class="tab-content">
 
-              <div class="tab-pane active" id="tab1">
+              <div class="row">
+
+              <div class="tab-pane active col-md-8" id="tab1">
 
                 <h3 class="block">Dados do Donatário</h3>
 
                 <div class="form-group">
 
-                  <label class="control-label col-md-2">Nome
+                  <label class="control-label col-md-1">Nome
                     <span class="required"> * </span>
                 </label>
                 <div class="col-md-4">
@@ -113,18 +116,20 @@
                 </div>
 
 
-                    <label class="control-label col-md-2">CPF
+                    <label class="control-label col-md-1">CPF
                         <span class="required"> * </span>
                     </label>
                     <div class="col-md-4">
                         <input type="text" class="form-control" name="cpf" />
                         <span class="help-block"> Digite o CPF </span>
                     </div>
+
+
                 </div>
 
                 <div class="form-group">
 
-                  <label class="control-label col-md-2">Email
+                  <label class="control-label col-md-1">Email
                       <span class="required"> * </span>
                   </label>
                   <div class="col-md-4">
@@ -132,7 +137,7 @@
                       <span class="help-block"> Digite o email </span>
                   </div>
 
-                  <label class="control-label col-md-2">Telefone
+                  <label class="control-label col-md-1">Telefone
                     <span class="required"> * </span>
                 </label>
                 <div class="col-md-4">
@@ -144,10 +149,10 @@
 
               <div class="form-group">
 
-                <label class="control-label col-md-2">Endereço
+                <label class="control-label col-md-1">Endereço
                   <span class="required"> * </span>
               </label>
-              <div class="col-md-10">
+              <div class="col-md-8">
                   <input type="text" class="form-control" name="endereco" />
                   <span class="help-block"> Digite o endereço </span>
               </div>
@@ -157,7 +162,7 @@
 
               <div class="form-group">
 
-                <label class="control-label col-md-2">Bairro
+                <label class="control-label col-md-1">Bairro
                     <span class="required"> * </span>
                 </label>
                 <div class="col-md-4">
@@ -165,7 +170,7 @@
                     <span class="help-block"> Digite o bairro </span>
                 </div>
 
-                <label class="control-label col-md-2">CEP
+                <label class="control-label col-md-1">CEP
                   <span class="required"> * </span>
               </label>
               <div class="col-md-4">
@@ -177,7 +182,7 @@
 
             <div class="form-group">
 
-              <label class="control-label col-md-2">Complemento
+              <label class="control-label col-md-1">Complemento
               </label>
 
               <div class="col-md-4">
@@ -185,7 +190,7 @@
                   <span class="help-block"> Digite o complemento </span>
               </div>
 
-              <label class="control-label col-md-2">UF
+              <label class="control-label col-md-1">UF
                 <span class="required"> * </span>
             </label>
             <div class="col-md-4">
@@ -198,7 +203,7 @@
 
           <div class="form-group">
 
-            <label class="control-label col-md-2">Municipio
+            <label class="control-label col-md-1">Municipio
               <span class="required"> * </span>
           </label>
           <div class="col-md-4">
@@ -211,6 +216,10 @@
 
             </div>
 
+            <div class="col-md-4" style="margin-top: 35px ;">
+              <app-chat-contribuinte></app-chat-contribuinte>
+            </div>
+              </div>
 
             </div>
           </div>
@@ -224,9 +233,13 @@
     <div class="col-sm-8">
 
     </div>
-    <button type="button" class="btn btn-success col-md-1" style="margin-right: 3px;">Voltar</button>
-    <button type="button" class="btn btn-success col-md-1" style="margin-right: 3px;" >Salvar</button>
+    <button type="button" class="btn btn-success col-md-1" style="margin-right: 4px;">Voltar</button>
+    <button type="button" class="btn btn-success col-md-1" style="margin-right: 4px;" >Salvar</button>
     <button type="button" class="btn btn-success col-md-1">Salvar Rascunho</button>
 
   </div>
+
+
 </div>
+
+

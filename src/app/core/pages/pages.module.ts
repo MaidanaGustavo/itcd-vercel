@@ -22,6 +22,8 @@ import { DaemsComponent } from "./daems/daems.component";
 import { DashboardFiscalComponent } from './dashboard-fiscal/dashboard-fiscal.component';
 import { RatificarGuiasComponent } from './ratificar-guias/ratificar-guias.component';
 import { ParametrosComponent } from './parametros/parametros.component';
+import { VisualizarGuiaModule } from "./visualizar-guia/visualizar-guia.module";
+import { ChatContribuinteComponent } from './chat-contribuinte/chat-contribuinte.component';
 
 @NgModule({
   imports: [
@@ -31,6 +33,7 @@ import { ParametrosComponent } from './parametros/parametros.component';
     Ng2SearchPipeModule,
     FormsModule,
     RouterModule,
+    VisualizarGuiaModule,
     NgxMaskModule.forRoot(),
     AlertModule.forRoot({ maxMessages: 5, timeout: 5000 }),
     LoadingModule,
@@ -49,6 +52,7 @@ import { ParametrosComponent } from './parametros/parametros.component';
     DashboardFiscalComponent,
     RatificarGuiasComponent,
     ParametrosComponent,
+    ChatContribuinteComponent,
   ],
 })
 export class PagesModule {}
