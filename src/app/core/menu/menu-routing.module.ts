@@ -8,6 +8,8 @@ import { DashboardComponent } from "../pages/dashboard/dashboard.component";
 import { FiscalGuiasComponent } from "../pages/fiscal-guias/fiscal-guias.component";
 import { GuiasComponent } from "../pages/guias/guias.component";
 import { NovaGuiaComponent } from "../pages/nova-guia/nova-guia.component";
+import { ParametrosComponent } from "../pages/parametros/parametros.component";
+import { RatificarGuiasComponent } from "../pages/ratificar-guias/ratificar-guias.component";
 import { ReclamacoesComponent } from "../pages/reclamacoes/reclamacoes.component";
 import { RelatoriosComponent } from "../pages/relatorios/relatorios.component";
 import { AdvogadoComponent } from "../pages/visualizar-guia/advogado/advogado.component";
@@ -80,6 +82,14 @@ const routes: Routes = [
       {
         path: "daems",
         component: DaemsComponent,
+      },
+      {
+        path: "ratificar-guia",
+        component: RatificarGuiasComponent,
+      },
+      {
+        path: "parametros",
+        component: ParametrosComponent,
       }
     ],
   },

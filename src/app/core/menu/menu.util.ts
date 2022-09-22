@@ -33,9 +33,15 @@ export  const opcoesFiscal: Menu[] = [
   },
   {
     id : '6',
-    titulo : 'DAEMS',
-    icone : 'icon-grid',
-    rota : '/pages/daems'
+    titulo : 'Ratificar Guias',
+    icone : 'fa fa-pencil-square-o',
+    rota : '/pages/ratificar-guia'
+  },
+  {
+    id : '7',
+    titulo : 'Parâmetros',
+    icone : 'fa fa-sliders',
+    rota : '/pages/parametros'
   },
 ]
 
