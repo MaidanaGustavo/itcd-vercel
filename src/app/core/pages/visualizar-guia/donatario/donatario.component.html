@@ -1,22 +1,177 @@
-<div class="container-column" >
+<div class="container-column">
   <div class="row">
     <div class="col-md-12">
-      <div class="portlet light portlet-fit bordered" style="width: 870px;">
+      <div class="portlet light portlet-fit bordered" style="width: 870px">
         <div class="portlet-title">
           <div class="caption">
-            <i class=" icon-layers font-blue"></i>
-              <span class="caption-subject font-blue bold uppercase"> Donatário </span>
+            <i class="icon-layers font-blue"></i>
+            <span class="caption-subject font-blue bold uppercase">
+              Donátario
+            </span>
           </div>
           <div class="actions">
-              <div class="input-icon pull-right">
-                  <i class="icon-magnifier"></i>
-                  <input type="text" class="form-control input-circle" placeholder="Filtrar...." name="filter"
-                         [(ngModel)]="filter">
-              </div>
-                <hr>
-
+            <div class="input-icon pull-right">
+              <i class="icon-magnifier"></i>
+              <input
+                type="text"
+                class="form-control input-circle"
+                placeholder="Filtrar...."
+                name="filter"
+                [(ngModel)]="filter"
+              />
+            </div>
+            <hr />
           </div>
-
+        </div>
+        <div class="portlet-body">
+          <div id="bootstrap_alerts_demo"></div>
+          <form class="form-horizontal" role="form">
+            <div class="form-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h6 class="control-label col-md-3">Tipo pessoa:</h6>
+                    <div class="col-md-9">
+                      <p class="form-control-static">
+                        {{ donatario.tipoPessoa }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h6 class="control-label col-md-3">CPF/CNPJ:</h6>
+                    <div class="col-md-9">
+                      <p class="form-control-static">
+                        {{ donatario.cpfCnpj }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h6 class="control-label col-md-3">Nome:</h6>
+                    <div class="col-md-9">
+                      <p class="form-control-static">
+                        {{ donatario.nome }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h6 class="control-label col-md-3">E-Mail:</h6>
+                    <div class="col-md-9">
+                      <p class="form-control-static">
+                        {{ donatario.email }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h6 class="control-label col-md-3">CEP:</h6>
+                    <div class="col-md-9">
+                      <p class="form-control-static">
+                        {{ donatario.cep }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h6 class="control-label col-md-3">Endereço:</h6>
+                    <div class="col-md-9">
+                      <p class="form-control-static">
+                        {{ donatario.endereco }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h6 class="control-label col-md-3">Bairro:</h6>
+                    <div class="col-md-9">
+                      <p class="form-control-static">
+                        {{ donatario.bairro }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h6 class="control-label col-md-3">Complemento:</h6>
+                    <div class="col-md-9">
+                      <p class="form-control-static">
+                        {{ donatario.complemento }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h6 class="control-label col-md-3">UF:</h6>
+                    <div class="col-md-9">
+                      <p class="form-control-static">
+                        {{ donatario.uf }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h6 class="control-label col-md-3">Município:</h6>
+                    <div class="col-md-9">
+                      <p class="form-control-static">
+                        {{ donatario.municipio }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h6 class="control-label col-md-3">Telefone:</h6>
+                    <div class="col-md-9">
+                      <p class="form-control-static">
+                        {{ donatario.telefone }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Outro donatário</h3>
+              <div class="row">
+                <div class="col-md-12">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>CPF/CNPJ</th>
+                        <th>Nome</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr
+                        *ngFor="let outroDonatario of donatario.outroDonatario"
+                      >
+                        <td>{{ outroDonatario.nome }}</td>
+                        <td>{{ outroDonatario.cpfCnpj }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>

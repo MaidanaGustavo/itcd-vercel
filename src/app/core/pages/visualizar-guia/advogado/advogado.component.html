@@ -1,22 +1,78 @@
-<div class="container-column" >
+<div class="container-column">
   <div class="row">
     <div class="col-md-12">
-      <div class="portlet light portlet-fit bordered" style="width: 870px;">
+      <div class="portlet light portlet-fit bordered" style="width: 870px">
         <div class="portlet-title">
           <div class="caption">
-            <i class=" icon-layers font-blue"></i>
-              <span class="caption-subject font-blue bold uppercase"> Advogado </span>
+            <i class="icon-layers font-blue"></i>
+            <span class="caption-subject font-blue bold uppercase">
+              Advogado
+            </span>
           </div>
           <div class="actions">
-              <div class="input-icon pull-right">
-                  <i class="icon-magnifier"></i>
-                  <input type="text" class="form-control input-circle" placeholder="Filtrar...." name="filter"
-                         [(ngModel)]="filter">
-              </div>
-                <hr>
-
+            <div class="input-icon pull-right">
+              <i class="icon-magnifier"></i>
+              <input
+                type="text"
+                class="form-control input-circle"
+                placeholder="Filtrar...."
+                name="filter"
+                [(ngModel)]="filter"
+              />
+            </div>
+            <hr />
           </div>
-
+        </div>
+        <div class="portlet-body">
+          <div id="bootstrap_alerts_demo"></div>
+          <form class="form-horizontal" role="form">
+            <div class="form-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h6 class="control-label col-md-3">Nome:</h6>
+                    <div class="col-md-9">
+                      <p class="form-control-static">
+                        {{ advogado.nome }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h6 class="control-label col-md-3">E-Mail:</h6>
+                    <div class="col-md-9">
+                      <p class="form-control-static">
+                        {{ advogado.nome }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h6 class="control-label col-md-3">UF da OAB:</h6>
+                    <div class="col-md-9">
+                      <p class="form-control-static">
+                        {{ advogado.ufOAB }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h6 class="control-label col-md-3">Número da OAB:</h6>
+                    <div class="col-md-9">
+                      <p class="form-control-static">
+                        {{ advogado.numeroOAB }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
